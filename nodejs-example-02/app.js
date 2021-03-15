@@ -6,11 +6,13 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 
+const bodyParser = require('body-parser');
+
 const cors = require('cors');
 const helmet = require('helmet');
 
 const app = express();
-
+app.use(bodyParser.json());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
