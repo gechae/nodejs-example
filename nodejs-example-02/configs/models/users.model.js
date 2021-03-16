@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = (sequelize, DataTypes) => {
-  const User = sequelize.define('User', {
+  const users = sequelize.define('users', {
     nickname : {
       allowNull: false,
       type : DataTypes.STRING
@@ -14,10 +14,10 @@ module.exports = (sequelize, DataTypes) => {
     tableName: 'users',
     timestamps: true
   });
-  User.associate = function(models) {
+  users.associate = function(models) {
 
   };
-  User.prototype.toJson - function() {
+  users.prototype.toJson = function() {
     const values = Object.assign({},this.get())
 
     return {
@@ -25,5 +25,5 @@ module.exports = (sequelize, DataTypes) => {
       nickname : values.nickname
     }
   }
-  return User;
+  return users;
 };

@@ -1,10 +1,11 @@
-const db = require("../configs/models/user.model");
+var model = require("../configs/models/users.model");
 
-module.exports.getUser = async() => {
+exports.getUser = () => {
     try {
         console.log("service getUser")
-        var user = await db.users.findAll({})
-        return user;
+        var user = model.users.findAll();
+        console.log(user);
+        return "A";
     } catch (err) {
         console.log(err)
         throw Error(err)

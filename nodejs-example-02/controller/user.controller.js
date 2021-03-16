@@ -1,3 +1,4 @@
+
 const services = require('../services/service');
 
 module.exports.getMain = (req,res,next) => {
@@ -5,8 +6,8 @@ module.exports.getMain = (req,res,next) => {
 }
 module.exports.getUser = (req,res,next) => {
     console.log("controller getUser")
-    console.log(services.getUser);
-    res.json(services.getUser);
+    var B = services.getUser();
+    res.json(B);
 }
 module.exports.get = (req,res,next) => {
     try {
