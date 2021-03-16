@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
 //DB 연결정보 확인 하기위해 require
-const models = require("./models/v1/index");
+const models = require("./configs/models/index");
 
 const indexRouter = require('./routes/index');
 
@@ -53,6 +53,7 @@ models.sequelize.sync().then( () => {
 }).catch(err => {
   console.log("연결 실패");
   console.log(err);
+  process.exit();
 });
 
 module.exports = app;

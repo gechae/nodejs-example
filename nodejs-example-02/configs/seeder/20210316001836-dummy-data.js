@@ -1,11 +1,9 @@
 'use strict';
 
-//const { DataTypes } = require("sequelize/types");
-
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     let datas = [];
-    for(let i = 0 ; i< 10; i++){
+    for (let i = 0; i < 10; i++){
       let obj = {
         nickname: "test_nickname-" + i,
         password: "1234",
@@ -14,7 +12,6 @@ module.exports = {
       }
       datas.push(obj)
     }
-
     return queryInterface.bulkInsert('users', datas, {});
   },
 
