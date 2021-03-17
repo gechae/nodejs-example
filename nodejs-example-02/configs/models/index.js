@@ -18,7 +18,7 @@ if (config.use_env_variable) {
 fs
   .readdirSync(__dirname)
   .filter(file => {
-    return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-9) === 'model.js');
+    return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-8) === 'model.js'); // -9 model
   })
   .forEach(file => {
     const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
